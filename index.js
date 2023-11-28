@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
-const { Shape, Triangle, Rectangle } = require('./lib/shapes')
+const { Shape, Triangle, Rectangle, Circle } = require('./lib/shapes')
 
 inquirer
     .prompt([
@@ -23,7 +23,7 @@ inquirer
         },
         {
             type: 'input',
-            message:'What color would you like your shape to be? Ente ra color or a hexadecimal value.',
+            message:'What color would you like your shape to be? Enter a color or a hexadecimal value.',
             name: 'shapeColor',
         }
     ]).then(answers => {
@@ -55,6 +55,6 @@ inquirer
             if (err) {
                 console.error('Error writing to file', err)
             }
-            console.log('File has been written')
+            console.log('Generated logo.svg')
         })
     })
